@@ -1,0 +1,16 @@
+﻿<Properties StartupItem="FirstMonoVisual/Mp3YoutubeMusicDownloader-Mono.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FirstMonoVisual/Models/DownloadList.cs">
+    <Files>
+      <File FileName="FirstMonoVisual/Program.cs" Line="1" Column="1" />
+      <File FileName="FirstMonoVisual/Downloader/Downloader.cs" Line="1" Column="1" />
+      <File FileName="FirstMonoVisual/MainWindow.cs" Line="1" Column="1" />
+      <File FileName="FirstMonoVisual/Models/DownloadList.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <AuthorInfo Name="tifuivali" Email="" Copyright="tifuivali" Company="" Trademark="" />
+</Properties>

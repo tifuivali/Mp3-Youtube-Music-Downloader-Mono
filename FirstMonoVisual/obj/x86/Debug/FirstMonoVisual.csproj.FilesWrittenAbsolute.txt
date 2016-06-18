@@ -1,0 +1,9 @@
+/home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/obj/x86/Debug/FirstMonoVisual.gtk-gui.gui.stetic
+/home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/bin/Debug/FirstMonoVisual.exe.mdb
+/home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/bin/Debug/FirstMonoVisual.exe
+/home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/obj/x86/Debug/FirstMonoVisual.exe
+/home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/obj/x86/Debug/FirstMonoVisual.exe.mdb
+/home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/bin/Debug/webkit-sharp.dll
+/home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/bin/Debug/Newtonsoft.Json.dll
+/home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/bin/Debug/YoutubeExtractor.dll
