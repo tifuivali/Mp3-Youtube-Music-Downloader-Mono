@@ -19,10 +19,10 @@ How To Install
      
    >- For other linux distributions:
      You need to install foolwings before run application:
-        >--gstreamer
-        >--webkitgtklib
-        >--mono-dev
-        >--mono-complete
-        >--ffmpeg
+   >--gstreame
+   >--webkitgtklib
+   >--mono-dev
+   >--mono-complete
+   >--ffmpeg
         
    
