@@ -10,7 +10,6 @@
     <Description>This is a application based on Youtube-Extractor library. Provides to users the posibility to download yours songs from youtube with a simple click.
 Enjoy it!</Description>
     <StartupObject>Mp3MusicYoutubeDownloader.MainClass</StartupObject>
-    <ApplicationIcon>..\..\..\..\Descărcări\youtube.ico</ApplicationIcon>
     <CodePage>65001</CodePage>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>

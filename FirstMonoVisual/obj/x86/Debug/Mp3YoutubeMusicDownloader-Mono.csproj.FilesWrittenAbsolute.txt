@@ -7,3 +7,12 @@
 /home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/bin/Debug/webkit-sharp.dll
 /home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/bin/Debug/YoutubeExtractor.dll
 /home/tifuivali/Documente/MonoProjects/FirstMonoVisual/FirstMonoVisual/bin/Debug/Newtonsoft.Json.dll
+/home/tifuivali/Descărcări/Git Mono Mp3/Mp3-Youtube-Music-Downloader-Mono/FirstMonoVisual/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/tifuivali/Descărcări/Git Mono Mp3/Mp3-Youtube-Music-Downloader-Mono/FirstMonoVisual/obj/x86/Debug/Mp3YoutubeMusicDownloader.gtk-gui.gui.stetic
+/home/tifuivali/Descărcări/Git Mono Mp3/Mp3-Youtube-Music-Downloader-Mono/FirstMonoVisual/bin/Debug/FirstMonoVisual.exe.mdb
+/home/tifuivali/Descărcări/Git Mono Mp3/Mp3-Youtube-Music-Downloader-Mono/FirstMonoVisual/bin/Debug/FirstMonoVisual.exe
+/home/tifuivali/Descărcări/Git Mono Mp3/Mp3-Youtube-Music-Downloader-Mono/FirstMonoVisual/obj/x86/Debug/FirstMonoVisual.exe
+/home/tifuivali/Descărcări/Git Mono Mp3/Mp3-Youtube-Music-Downloader-Mono/FirstMonoVisual/obj/x86/Debug/FirstMonoVisual.exe.mdb
+/home/tifuivali/Descărcări/Git Mono Mp3/Mp3-Youtube-Music-Downloader-Mono/FirstMonoVisual/bin/Debug/webkit-sharp.dll
+/home/tifuivali/Descărcări/Git Mono Mp3/Mp3-Youtube-Music-Downloader-Mono/FirstMonoVisual/bin/Debug/YoutubeExtractor.dll
+/home/tifuivali/Descărcări/Git Mono Mp3/Mp3-Youtube-Music-Downloader-Mono/FirstMonoVisual/bin/Debug/Newtonsoft.Json.dll

@@ -103,7 +103,7 @@ namespace Mp3MusicYoutubeDownloader
 			ExtendedVideoDownloader videoDownloader = new ExtendedVideoDownloader(video,fromPath,downloadItem);
 
 			videoDownloader.DownloadProgressChanged+=new EventHandler<ProgressEventArgs>(OnProgressChangedVideo);
-			videoDownloader.DownloadFinished += new EventHandler(OnDownloadFinishVideo);
+			videoDownloader.DownloadFinished += new EventHandler(OnDownloadFinishVideoAudioHQ);
 			try
 			{
 			    videoDownloader.Execute ();
