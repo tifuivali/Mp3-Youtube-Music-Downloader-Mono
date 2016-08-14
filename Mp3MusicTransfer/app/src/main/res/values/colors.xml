@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="TextlabelColor">#873260</color>
+    <color name="TextConnected">#008000</color>
+    <color name="TextDisconected">#f90617</color>
+    <color name="EditTextColorIPPort">#0fa38c</color>
+    <color name="StatusColorBack">#B31B1B</color>
+    <color name="StatusForeColor">#5ac2a0</color>
+    <color name="Backgroundlayout">#B2FFFF</color>
+    <color name="ButtonStartBack">#0ba3f5</color>
+    <color name="ButtonStopBack">#2d53ce</color>
+    <color name="textEditFore">#2d53ce</color>
+</resources>

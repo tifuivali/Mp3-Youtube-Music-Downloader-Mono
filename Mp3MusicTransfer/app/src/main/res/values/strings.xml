@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Mp3 Music Transfer</string>
+    <string name="action_settings">Settings</string>
+    <string name="textIP">IP:</string>
+    <string name="textPort">PORT:</string>
+    <string name="textStart" />
+    <string name="textStar">Start</string>
+    <string name="btnStringStop">Stop</string>
+    <string name="textStatus">Details:</string>
+    <string name="openTransfers">Open Transfers</string>
+    <string name="progresstext">Progress:</string>
+</resources>

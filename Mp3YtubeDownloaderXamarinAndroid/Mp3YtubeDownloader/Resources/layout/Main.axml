@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="25px"
+    android:minHeight="25px">
+    <EditText
+        android:id="@+id/text_adress"
+        android:width="200dp"
+        android:text="@string/default_adress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar1" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="0dp"
+        android:scrollbars="horizontal">
+        <Button
+            android:text="&lt;-"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/button_back"
+            android:layout_marginLeft="0dp" />
+        <Button
+            android:text="Home"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:id="@+id/button_home" />
+        <Button
+            android:text="-&gt;"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/button_forward" />
+        <Button
+            android:text="Go"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:id="@+id/button_go" />
+        <Button
+            android:text="Mp4"
+            android:id="@+id/button_download_video"
+            android:layout_width="80dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+    <TextView
+        android:text="-"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/textView_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/webView1"
+        android:minHeight="350dp" />
+    <HorizontalScrollView
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/horizontalScrollView1" />
+</LinearLayout>

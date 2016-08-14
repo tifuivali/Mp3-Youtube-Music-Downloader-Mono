@@ -1,0 +1,15 @@
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\Mp3YtubeDownloader.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\Famoser.YoutubeExtractor.Portable.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\Newtonsoft.Json.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\System.Net.Http.Extensions.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\System.Net.Http.Primitives.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\YoutubeExtractor.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\Java.Interop.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\Mono.Android.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\System.Core.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\System.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\System.Net.Http.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\System.Xml.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\mscorlib.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\System.Runtime.Serialization.dll
+C:\Users\tifui\Documents\Projects\Mp3YtubeDownloader\Mp3YtubeDownloader\obj\Release\android\assets\System.ServiceModel.Internals.dll

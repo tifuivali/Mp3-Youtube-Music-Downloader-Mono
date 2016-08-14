@@ -1,0 +1,17 @@
+﻿<Properties StartupItem="Mp3YtubeDownloader\Mp3YtubeDownloader.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Mp3YtubeDownloader AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.MVT8GQKBDUAIDIB6" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="Mp3YtubeDownloader\Downlaoder\Downloader.cs">
+    <Files>
+      <File FileName="Mp3YtubeDownloader\MainActivity.cs" Line="60" Column="39" />
+      <File FileName="Mp3YtubeDownloader\FilePickerActivity\FileListFragment.cs" Line="86" Column="15" />
+      <File FileName="Mp3YtubeDownloader\FilePickerActivity\Helpers.cs" Line="4" Column="15" />
+      <File FileName="Mp3YtubeDownloader\FilePickerActivity\FilePickerActivity.cs" Line="22" Column="35" />
+      <File FileName="Mp3YtubeDownloader\Downlaoder\Downloader.cs" Line="36" Column="87" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
