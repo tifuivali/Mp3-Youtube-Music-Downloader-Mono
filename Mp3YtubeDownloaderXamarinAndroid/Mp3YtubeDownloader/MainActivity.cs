@@ -7,6 +7,8 @@ using Android.Content;
 
 using System;
 using Mp3YtubeDownloader.Downlaoder;
+using Mp3YtubeDownloader.Downlaods;
+using Mp3YtubeDownloader.Notifications;
 
 namespace Mp3YtubeDownloader
 {
@@ -15,51 +17,56 @@ namespace Mp3YtubeDownloader
 	{
 
 		private ExtendedWebView extendedWebView;
-		private Downloader downloader;
-		protected override void OnCreate(Bundle savedInstanceState)
+	    private DownlaodsManager downloadsManager;
+
+	    protected override void OnCreate(Bundle savedInstanceState)
+	    {
+	        base.OnCreate(savedInstanceState);
+	        // Set our view from the "main" layout resource
+	        SetContentView(Resource.Layout.Main);
+	        // Get our button from the layout resource,
+	        // and attach an event to it
+	        Button button_go = (Button) FindViewById(Resource.Id.button_go);
+	        button_go.Click += ButtonGo_Click;
+	        Button button_home = (Button) FindViewById(Resource.Id.button_home);
+	        button_home.Click += ButtonHome_Click;
+	        Button button_back = (Button) FindViewById(Resource.Id.button_back);
+	        button_back.Click += ButtonBack_Click;
+	        Button button_forward = (Button) FindViewById(Resource.Id.button_forward);
+	        button_forward.Click += ButtonForward_Click;
+	        Button button_download_video = (Button) FindViewById(Resource.Id.button_download_video);
+	        button_download_video.Click += ButtonDownloadVideo_Click;
+
+
+	        WebView webView = (WebView) FindViewById(Resource.Id.webView1);
+	        webView.LoadUrl(Resources.GetString(Resource.String.default_adress));
+	        EditText text_adress = (EditText) FindViewById(Resource.Id.text_adress);
+	        extendedWebView = new ExtendedWebView(text_adress);
+	        webView.SetWebViewClient(extendedWebView);
+	        webView.Settings.JavaScriptEnabled = true;
+	        webView.KeyPress += (sender, e) =>
+	        {
+	            if (e.KeyCode == Android.Views.Keycode.Back)
+	            {
+	                webView.GoBack();
+	            }
+	        };
+
+
+	        downloadsManager = new DownlaodsManager();
+	        downloadsManager.DirectoryToSave = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "Download");
+	    }
+
+	    private void OnDetailsPerformed(object o, DetailsEventArgs dea)
+	    {
+            TextView txtStatus = (TextView)FindViewById(Resource.Id.textView_status);
+	        txtStatus.Text = dea.Message;
+	    }
+
+        private void OnDownloadProgressChangedPerformed(object o,ProgressEventArgs e)
 		{
-			base.OnCreate(savedInstanceState);
-			// Set our view from the "main" layout resource
-			SetContentView(Resource.Layout.Main);
-			// Get our button from the layout resource,
-			// and attach an event to it
-			Button button_go = (Button)FindViewById(Resource.Id.button_go);
-			button_go.Click += ButtonGo_Click;
-			Button button_home = (Button)FindViewById(Resource.Id.button_home);
-			button_home.Click += ButtonHome_Click;
-			Button button_back = (Button)FindViewById(Resource.Id.button_back);
-			button_back.Click += ButtonBack_Click;
-			Button button_forward = (Button)FindViewById(Resource.Id.button_forward);
-			button_forward.Click += ButtonForward_Click;
-			Button button_download_video = (Button)FindViewById(Resource.Id.button_download_video);
-			button_download_video.Click += ButtonDownloadVideo_Click;
-
-
-			WebView webView = (WebView)FindViewById(Resource.Id.webView1);
-			webView.LoadUrl(Resources.GetString(Resource.String.default_adress));
-			EditText text_adress = (EditText)FindViewById(Resource.Id.text_adress);
-			extendedWebView = new ExtendedWebView(text_adress);
-			webView.SetWebViewClient(extendedWebView);
-			webView.Settings.JavaScriptEnabled = true;
-			webView.KeyPress += (sender, e) =>
-			 {
-				 if (e.KeyCode == Android.Views.Keycode.Back)
-				 {
-					 webView.GoBack();
-				 }
-			 };
-			ProgressBar progressBar = (ProgressBar)FindViewById(Resource.Id.progressBar1);
-			TextView txtStatus = (TextView)FindViewById(Resource.Id.textView_status);
-			downloader = new Downloader();
-			downloader.PathToSave = Path.Combine(Android.OS.Environment.ExternalStorageDirectory.AbsolutePath, "Download");
-			downloader.OnDetails += (sender, e) =>
-			  {
-				  txtStatus.Append(e.Message);
-			  };
-			downloader.OnProgressDownloadChanged += (sender, e) =>
-			{
-				progressBar.Progress = e.Progress;	
-			};
+            ProgressBar progressBar = (ProgressBar)FindViewById(Resource.Id.progressBar1);
+		    progressBar.Progress = e.Progress;
 		}
 
 		public override bool OnCreateOptionsMenu(Android.Views.IMenu menu)
@@ -100,9 +107,9 @@ namespace Mp3YtubeDownloader
 
 						if (resultCode == Result.Ok)
 						{
-							downloader.PathToSave = data.GetStringExtra("path");
+							downloadsManager.DirectoryToSave = data.GetStringExtra("path");
 							Toast.MakeText(this, "Your video will be saved in: " +
-							                     downloader.PathToSave, ToastLength.Long).Show();
+							                     downloadsManager.DirectoryToSave, ToastLength.Long).Show();
 						}
 						break;
 					}
@@ -129,7 +136,9 @@ namespace Mp3YtubeDownloader
 		private void ButtonDownloadVideo_Click(object o, EventArgs ea)
 		{
 			WebView webView = (WebView)FindViewById(Resource.Id.webView1);
-			downloader.DownloadVideo(webView.Url);
+			downloadsManager.AddDownload(new VideoDownloader(webView.Url));
+            downloadsManager.AddNotificationForLastDownload(this);
+            downloadsManager.StartLastDownload();      
 		}
 
         private bool IsWebAdressForYoutubeVideo()

@@ -1,50 +1,34 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
 using Android.App;
-using YoutubeExtractor;
 
 namespace Mp3YtubeDownloader.Downlaoder
 {
-	public class Downloader
+	public abstract class Downloader
 	{
-	    public int VideoResolution { get; set; }
+	    public abstract int VideoResolution { get; set; }
 
-		public event EventHandler<ProgressEventArgs> OnProgressDownloadChanged;
+        public abstract int DownloadId { get; set; }
 
-		public event EventHandler<DetailsEventArgs> OnDetails;
-		public string PathToSave;
+	    public abstract string DownloadUrl { get; set; }
+
+		public abstract event EventHandler<ProgressEventArgs> OnProgressDownloadChanged;
+
+		public abstract event EventHandler<DetailsEventArgs> OnDetails;
+
+	    public abstract event EventHandler<EventArgs> OnDownloadStart;
+
+	    public abstract event EventHandler<DownloadFinishEventArgs> OnDownloadFinished;
+
+	    public abstract string PathToSave { get; set; }
 
 
-        public async void DownloadVideo(string link)
-        {
-            OnDetails?.Invoke(this, new DetailsEventArgs("Start Download..."));
-            IEnumerable<VideoInfo> videoInfos = DownloadUrlResolver.GetDownloadUrls(link);
-            VideoInfo video = videoInfos.OrderByDescending(x => x.Resolution).FirstOrDefault();
+	    public abstract void DownloadContent();
 
-            if (video != null && video.RequiresDecryption)
-            {
-                DownloadUrlResolver.DecryptDownloadUrl(video);
-            }
 
-            OnProgressDownloadChanged?.Invoke(this, new ProgressEventArgs(0));
-            var progressReporter = new Progress<DownloadBytesProgress>();
-            progressReporter.ProgressChanged += (s, args) =>
-            {
-                OnProgressDownloadChanged?.Invoke(this, new ProgressEventArgs((int)(100 * args.PercentComplete)));
-
-            };
-            if (video == null) return;
-            OnDetails?.Invoke(this, new DetailsEventArgs($"Downloading {video.Title}..."));
-            await CreateDownloadTask(video.DownloadUrl, progressReporter, $"{Path.Combine(PathToSave, video.Title)}.mp4");
-        }
-
-	
-
-        public async Task<int> CreateDownloadTask(string urlToDownload, IProgress<DownloadBytesProgress> progessReporter,string fileName)
+	    protected async Task<int> CreateDownloadTask(string urlToDownload, IProgress<DownloadBytesProgress> progessReporter,string fileName)
 		{
 			var receivedBytes = 0;
 		    var client = new WebClient();
@@ -60,26 +44,20 @@ namespace Mp3YtubeDownloader.Downlaoder
 				{
 					var bytesRead = await stream.ReadAsync(buffer, 0, buffer.Length);
 					fileStream.Write(buffer, 0, bytesRead);
-					if (bytesRead == 0)
-					{
-						await Task.Yield();
-						break;
-					}
-
-
 					receivedBytes += bytesRead;
 					if (progessReporter != null)
 					{
 						var args = new DownloadBytesProgress(urlToDownload, receivedBytes, totalBytes);
 						progessReporter.Report(args);
 					}
-				}
+                    if (bytesRead == 0)
+                    {
+                        await Task.Yield();
+                        break;
+                    }
+                }
 			}
 			fileStream.Close();
-			Application.SynchronizationContext.Post(_ =>
-			{
-			    OnDetails?.Invoke(this, new DetailsEventArgs("Download fished path:" + fileName));
-			}, null);
 			return receivedBytes;
 		}
 
