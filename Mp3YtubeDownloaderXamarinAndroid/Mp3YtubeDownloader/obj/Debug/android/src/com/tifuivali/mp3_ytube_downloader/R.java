@@ -16,7 +16,7 @@ public final class R {
         public static final int ic_launcher=0x7f020002;
     }
     public static final class id {
-        public static final int button_NavigateFolder=0x7f060007;
+        public static final int button_CancelPicker=0x7f060007;
         public static final int button_back=0x7f06000a;
         public static final int button_download_video=0x7f06000e;
         public static final int button_forward=0x7f06000c;

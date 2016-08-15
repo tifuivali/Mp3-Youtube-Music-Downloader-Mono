@@ -1,4 +1,7 @@
 ﻿
+using System.Collections.Generic;
+using Java.IO;
+
 namespace Mp3YtubeDownloader
 {
 	using System;
@@ -24,6 +27,12 @@ namespace Mp3YtubeDownloader
 
 		private void ClickSelectFolder(object o, EventArgs ea)
 		{
+		    var file = new File(FileListFragment.SelectedDirctory);
+		    if (!file.CanWrite())
+		    {
+		        Toast.MakeText(this,"This Folder"+FileListFragment.SelectedDirctory+" cannot be write! You need to be root!",ToastLength.Long).Show();
+		        return;
+		    }
 			Intent resultIntent = new Intent(this, typeof(MainActivity));
 			resultIntent.PutExtra("path", FileListFragment.SelectedDirctory);
 			SetResult(Result.Ok,resultIntent);

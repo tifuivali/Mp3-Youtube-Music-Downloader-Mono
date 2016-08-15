@@ -1,1 +1,1 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"><item android:id="@+id/exit_button" android:title="@string/exit_text" android:showAsAction="ifRoom" /></menu>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"><item android:id="@+id/exit_button" android:title="@string/exit_text" android:showAsAction="ifRoom" /><item android:id="@+id/set_path" android:title="@string/set_path" android:showAsAction="ifRoom" /></menu>

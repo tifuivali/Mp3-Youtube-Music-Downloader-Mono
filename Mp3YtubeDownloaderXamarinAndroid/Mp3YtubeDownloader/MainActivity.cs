@@ -6,6 +6,7 @@ using System.IO;
 using Android.Content;
 
 using System;
+using Mp3YtubeDownloader.Downlaoder;
 
 namespace Mp3YtubeDownloader
 {
@@ -118,39 +119,59 @@ namespace Mp3YtubeDownloader
 			base.OnPause();
 		}
 
+	    private void  RefreshStateDownloadButtons()
+	    {
+            Button btnDownloadMp4 =
+                FindViewById<Button>(Resource.Id.button_download_video);
+            btnDownloadMp4.Enabled = IsWebAdressForYoutubeVideo();
+        }
+
 		private void ButtonDownloadVideo_Click(object o, EventArgs ea)
 		{
 			WebView webView = (WebView)FindViewById(Resource.Id.webView1);
 			downloader.DownloadVideo(webView.Url);
 		}
 
+        private bool IsWebAdressForYoutubeVideo()
+        {
+            WebView webView = (WebView)FindViewById(Resource.Id.webView1);
+            return YotubeUtils.IsYoutubeValidUri(webView.Url);
+        }
 
-		private void ButtonGo_Click(object o,EventArgs ea)
+        private void ButtonGo_Click(object o,EventArgs ea)
 		{
 			WebView webView = (WebView)FindViewById(Resource.Id.webView1);
 			EditText text_adress = (EditText)FindViewById(Resource.Id.text_adress);
 			webView.LoadUrl(text_adress.Text);
+            RefreshStateDownloadButtons();
 		}
 
 		private void ButtonHome_Click(object o, EventArgs ea)
 		{
 			WebView webView = (WebView)FindViewById(Resource.Id.webView1);
 			webView.LoadUrl(Resources.GetString(Resource.String.default_adress));
-		}
+            RefreshStateDownloadButtons();
+        }
 
 
 		private void ButtonBack_Click(object o, EventArgs ea)
 		{
 			WebView webView = (WebView)FindViewById(Resource.Id.webView1);
-			if (webView.CanGoBack())
-				webView.GoBack();
+		    if (webView.CanGoBack())
+		    {
+		        webView.GoBack();
+                RefreshStateDownloadButtons();
+            }
 		}
 
 		private void ButtonForward_Click(object o, EventArgs ea)
 		{
 			WebView webView = (WebView)FindViewById(Resource.Id.webView1);
-			if (webView.CanGoForward())
-				webView.GoForward();
+		    if (webView.CanGoForward())
+		    {
+		        webView.GoForward();
+                RefreshStateDownloadButtons();
+            }
 		}
 
 
